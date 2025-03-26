@@ -121,25 +121,27 @@ public void markTaskCompleted(String name) {
 
 public class SI2025Lab1Main {
     public static void main(String[] args) {
-        TaskManager manager = new TaskManager();
+       TaskManager manager = new TaskManager();
         manager.addTask("Write report", Priority.HIGH, "Work");
         manager.addTask("Submit assignment", Priority.MEDIUM, "School");
         manager.addTask("Buy groceries", Priority.LOW, "Personal");
 
-        // MISSING: Calls to the new methods that will be implemented
+        
+        manager.markTaskCompleted("Write report");
 
-        manager.printTasks();
- System.out.println("Completed Tasks:");
+                System.out.println("Completed Tasks:");
         for (Task task : manager.getCompletedTasks()) {
             System.out.println(task);
         }
 
-		System.out.println("\nTask count per category:");
+        
+        manager.printTasks();
+
+               System.out.println("\nTask count per category:");
         Map<String, Integer> categoryCounts = manager.countTasksPerCategory();
         for (Map.Entry<String, Integer> entry : categoryCounts.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
- 		manager.markTaskCompleted("Write report");
 
    }
 }
