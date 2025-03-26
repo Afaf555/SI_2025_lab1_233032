@@ -68,9 +68,13 @@ class TaskManager {
     }
 
     // 2. Find all completed tasks
-    public List<Task> getCompletedTasks() {
-        // TODO: Implement logic to return completed tasks
-        return new ArrayList<>();
+
+  public List<Task> getCompletedTasks() {
+    List<Task> completedTasks = new ArrayList<>();
+    for (Task task : tasks) {
+        if (task.isCompleted()) {
+            completedTasks.add(task);
+        }
     }
 
     // 3. List tasks sorted by name
@@ -125,6 +129,7 @@ public class SI2025Lab1Main {
 
         // MISSING: Calls to the new methods that will be implemented
 
+<<<<<<< HEAD
         manager.printTasks();
  System.out.println("\nTask count per category:");
         Map<String, Integer> categoryCounts = manager.countTasksPerCategory();
@@ -132,5 +137,14 @@ public class SI2025Lab1Main {
             System.out.println(entry.getKey() + ": " + entry.getValue());
         }
 
+=======
+       
+        System.out.println("Completed Tasks:");
+        for (Task task : manager.getCompletedTasks()) {
+            System.out.println(task);
+        }     
+
+   manager.printTasks();
+>>>>>>> origin/master
     }
 }
