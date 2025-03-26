@@ -102,9 +102,16 @@ class TaskManager {
     }
 
     // 8. Mark a task as completed by name
-    public void markTaskCompleted(String name) {
-        // TODO: Implement completion logic
+public void markTaskCompleted(String name) {
+    for (Task task : tasks) {
+        if (task.getName().equals(name)) {
+            task.complete();
+            System.out.println("Task "" + name + "" marked as completed.");
+            return;
+        }
     }
+    System.out.println("Task with the name "" + name + "" not found.");
+}    
 
     // 9. Mark all tasks in a category as completed
     public void markCategoryCompleted(String category) {
@@ -122,5 +129,18 @@ public class SI2025Lab1Main {
         // MISSING: Calls to the new methods that will be implemented
 
         manager.printTasks();
-    }
+ System.out.println("Completed Tasks:");
+        for (Task task : manager.getCompletedTasks()) {
+            System.out.println(task);
+        }
+
+		System.out.println("\nTask count per category:");
+        Map<String, Integer> categoryCounts = manager.countTasksPerCategory();
+        for (Map.Entry<String, Integer> entry : categoryCounts.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+ 		manager.markTaskCompleted("Write report");
+
+   }
 }
+	
