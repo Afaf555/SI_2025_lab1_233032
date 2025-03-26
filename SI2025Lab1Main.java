@@ -63,14 +63,18 @@ class TaskManager {
     // MISSING FEATURES:
 
     // 1. Remove a task by name
-    public void removeTask(String name) {
-        // TODO: Implement removal logic
-    }
+   public void removeTask(String name) {
+    tasks.removeIf(task -> task.getName().equals(name));
+}
 
     // 2. Find all completed tasks
-    public List<Task> getCompletedTasks() {
-        // TODO: Implement logic to return completed tasks
-        return new ArrayList<>();
+
+  public List<Task> getCompletedTasks() {
+    List<Task> completedTasks = new ArrayList<>();
+    for (Task task : tasks) {
+        if (task.isCompleted()) {
+            completedTasks.add(task);
+        }
     }
 
     // 3. List tasks sorted by name
@@ -96,15 +100,26 @@ class TaskManager {
     }
 
     // 7. Count tasks per category
-    public Map<String, Integer> countTasksPerCategory() {
-        // TODO: Implement counting logic
-        return new HashMap<>();
+     public Map<String, Integer> countTasksPerCategory() {
+        Map<String, Integer> categoryCount = new HashMap<>();
+        for (Task task : tasks) {
+            String category = task.getCategory();
+            categoryCount.put(category, categoryCount.getOrDefault(category, 0) + 1);
+        }
+        return categoryCount;
     }
 
     // 8. Mark a task as completed by name
-    public void markTaskCompleted(String name) {
-        // TODO: Implement completion logic
+public void markTaskCompleted(String name) {
+    for (Task task : tasks) {
+        if (task.getName().equals(name)) {
+            task.complete();
+            System.out.println("Task "" + name + "" marked as completed.");
+            return;
+        }
     }
+    System.out.println("Task with the name "" + name + "" not found.");
+}    
 
     // 9. Mark all tasks in a category as completed
     public void markCategoryCompleted(String category) {
@@ -114,13 +129,42 @@ class TaskManager {
 
 public class SI2025Lab1Main {
     public static void main(String[] args) {
-        TaskManager manager = new TaskManager();
+       TaskManager manager = new TaskManager();
         manager.addTask("Write report", Priority.HIGH, "Work");
         manager.addTask("Submit assignment", Priority.MEDIUM, "School");
         manager.addTask("Buy groceries", Priority.LOW, "Personal");
 
-        // MISSING: Calls to the new methods that will be implemented
+        
+        manager.markTaskCompleted("Write report");
 
+                System.out.println("Completed Tasks:");
+        for (Task task : manager.getCompletedTasks()) {
+            System.out.println(task);
+        }
+
+  manager.removeTask("Write report");
+        
         manager.printTasks();
+
+               System.out.println("\nTask count per category:");
+        manager.printTasks();
+ System.out.println("\nTask count per category:");
+
+        Map<String, Integer> categoryCounts = manager.countTasksPerCategory();
+        for (Map.Entry<String, Integer> entry : categoryCounts.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+
+
+   }       
+        System.out.println("Completed Tasks:");
+        for (Task task : manager.getCompletedTasks()) {
+            System.out.println(task);
+        }     
+
+   manager.printTasks();
+
     }
+
 }
+	
