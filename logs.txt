@@ -1,0 +1,24 @@
+* ad68886 prva funkcija
+*   ce931b2 Merge pull request #12 from Afaf555/8-mark-a-task-as-completed-by-name
+|\  
+| *   79fe02c Merge branch 'master' into 8-mark-a-task-as-completed-by-name
+| |\  
+| |/  
+|/|   
+* |   e965829 Merge pull request #11 from Afaf555/7-count-tasks-per-category
+|\ \  
+| * \   73d1692 7ma funkcija
+| |\ \  
+| |/ /  
+|/| |   
+* | |   fb337ab Merge pull request #10 from Afaf555/2-find-all-completed-tasks
+|\ \ \  
+| * | | 5a3ccc3 completed tasks funkcija
+|/ / /  
+| * / bf76740 7ma fukncija gotova
+|/ /  
+| * 4a0e71f po izmeni 8ma funkcija
+| * 0bad568 8ma funkcija
+|/  
+* 8ca57db Add starter code
+* b19862c Initial commit
