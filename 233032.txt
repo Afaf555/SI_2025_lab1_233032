@@ -1,0 +1,50 @@
+git fetch origin
+git checkout 2-find-all-completed-tasks
+
+git fetch origin
+git checkout 7-count-tasks-per-category
+
+git fetch origin
+git checkout 8-mark-a-task-as-completed-by-name
+
+git fetch origin
+git checkout 1-remove-a-task-by-name
+
+
+$ mkdir SI_2025_lab1_233032 se kreira direktorium
+$ cd SI_2025_lab1_233032 se prefluvame kaj nego
+$ git init
+Initialized empty Git repository in C:/Users/User/SI_2025_lab1_233032/.git/ za inicijalizacija na git repo
+$ git remote add origin https://github.com/Afaf555/SI_2025_lab1_233032.git za povrzuvanje so ona na GitHub
+$ nano README.md
+$ git add README.md na stage
+$ git commit -m "Initial commit" commit za README
+$ nano SI2025Lab1Main.java
+$ git add SI2025Lab1Main.java
+$ git commit -m "Add starter code" isto i za ova
+ git push -u origin master
+
+$ git fetch origin
+From https://github.com/Afaf555/SI_2025_lab1_233032
+ * [new branch]      2-find-all-completed-tasks -> origin/2-find-all-completed-tasks
+ * [new branch]      7-count-tasks-per-category -> origin/7-count-tasks-per-category
+ * [new branch]      8-mark-a-task-as-completed-by-name -> origin/8-mark-a-task-as-completed-by-name
+
+git fetch origin
+git checkout 2-find-all-completed-tasks prefrluvanje na soodvetna granka
+-ovde so nano SI2025Lab1Main.java ja implementiravme funkcijata
+git add .
+git commit -m "..."
+git push origin 2-find-all-completed-tasks
+potoa vo GitHub  na repo-to vo pull request se izbira grankata se kreira pull request i potoa se mergenuvaat grankite
+ ovie cekori gi povtoriv za site issues koi trebaa da bidat done
+
+i da imav konflikt kaj 8-iot issue i go reshiv taka sto preku git hub go otvoriv .java i gi otstraniv <<<< ====== >>>>> ova se sluci poradi ne usoglasuvanje na promenite
+
+*inaku imam 4 issues bidejki ne procitav deka ne moze eden od boldiranite i za toa na kraj dodadov uste eden nov t.e 1
+
+
+ git log --oneline --graph --all ovaa komanda zadadena od vas iskoristena za grafot
+ potoa na kraj napraviv git pull
+i potoa git push origin master
+ 
